@@ -5,25 +5,25 @@
 class Ssmbrowse < Formula
   desc "Simple and elegant cli AWS SSM parameter browser."
   homepage "https://github.com/bnaydenov/ssmbrowse"
-  version "0.1.0-alpha.10"
+  version "0.1.0-alpha.11"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.10/ssmbrowse_0.1.0-alpha.10_Darwin_x86_64.zip"
-    sha256 "fcc7d21dd2679516ac1c8493e19e3e3ff69b99d10bdbf10aa6f3af9f019d28c3"
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.11/ssmbrowse_0.1.0-alpha.11_Darwin_x86_64.zip"
+    sha256 "cc3215eed6fccec44f11d616654bf44d7456edad87bc39f92aedf3fc8f90bdb8"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.10/ssmbrowse_0.1.0-alpha.10_Darwin_arm64.zip"
-    sha256 "bfab0e6daa21caa547896073dc32c5c94f8e7d86f81b9840acfeea96bb71d87e"
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.11/ssmbrowse_0.1.0-alpha.11_Darwin_arm64.zip"
+    sha256 "fce4745261da83b4e26b0d21470325b5c83a5c57e9216e376683285e8c633f69"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.10/ssmbrowse_0.1.0-alpha.10_Linux_x86_64.zip"
-    sha256 "66bfc2830f271cdf5989d5bdb20ad761c9c3e9f184f7ed4900ba3b5b2aec088f"
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.11/ssmbrowse_0.1.0-alpha.11_Linux_x86_64.zip"
+    sha256 "bbae3df80c766586c512ff1c8ef4c796f82a1b338450336d97a4bc3ca41e7925"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.10/ssmbrowse_0.1.0-alpha.10_Linux_arm64.zip"
-    sha256 "686ed7becf5ecbefc2d27e99a2f6c0df49ddef3a6d2a3245c12efada086b24bc"
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.11/ssmbrowse_0.1.0-alpha.11_Linux_arm64.zip"
+    sha256 "eb9649291c83d209d0f6745fd564043bd4aeda2827e789236ec3b2d49b09ebf8"
   end
 
   def install
