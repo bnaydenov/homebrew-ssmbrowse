@@ -5,25 +5,25 @@
 class Ssmbrowse < Formula
   desc "Simple and elegant cli AWS SSM parameter browser."
   homepage "https://github.com/bnaydenov/ssmbrowse"
-  version "0.1.0-alpha.11"
+  version "0.1.0-alpha.12"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.11/ssmbrowse_0.1.0-alpha.11_Darwin_x86_64.zip"
-    sha256 "cc3215eed6fccec44f11d616654bf44d7456edad87bc39f92aedf3fc8f90bdb8"
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.12/ssmbrowse_0.1.0-alpha.12_macos_x86_64.zip"
+    sha256 "3025a3ac085bd5b9618b84258fa722ca5188a4dd2d506eae2efaf2dd651b3aca"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.11/ssmbrowse_0.1.0-alpha.11_Darwin_arm64.zip"
-    sha256 "fce4745261da83b4e26b0d21470325b5c83a5c57e9216e376683285e8c633f69"
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.12/ssmbrowse_0.1.0-alpha.12_macos_arm64.zip"
+    sha256 "5039958987342814afdaa25cf00891a96ae5bd113ba1a65b74b787c878290998"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.11/ssmbrowse_0.1.0-alpha.11_Linux_x86_64.zip"
-    sha256 "bbae3df80c766586c512ff1c8ef4c796f82a1b338450336d97a4bc3ca41e7925"
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.12/ssmbrowse_0.1.0-alpha.12_linux_x86_64.zip"
+    sha256 "76ffca081289355b6f14d789d4a858e4470290a407c3fc3c33a872ecd1cc9d5f"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.11/ssmbrowse_0.1.0-alpha.11_Linux_arm64.zip"
-    sha256 "eb9649291c83d209d0f6745fd564043bd4aeda2827e789236ec3b2d49b09ebf8"
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.12/ssmbrowse_0.1.0-alpha.12_linux_arm64.zip"
+    sha256 "45814fb7258c0e4bd25c56c16ff60ed606f02550a16200d96eeb89347cad99ec"
   end
 
   def install
