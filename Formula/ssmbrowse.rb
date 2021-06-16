@@ -5,25 +5,30 @@
 class Ssmbrowse < Formula
   desc "Simple and elegant cli AWS SSM parameter browser."
   homepage "https://github.com/bnaydenov/ssmbrowse"
-  version "0.1.0-alpha.12"
+  version "0.1.0"
   license "MIT"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.12/ssmbrowse_0.1.0-alpha.12_macos_x86_64.zip"
-    sha256 "3025a3ac085bd5b9618b84258fa722ca5188a4dd2d506eae2efaf2dd651b3aca"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0/ssmbrowse_0.1.0_macos_x86_64.zip"
+      sha256 "931bf5bd8c18f803820a310e07bced162d2a1ed5c2db48e069f8780476094579"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0/ssmbrowse_0.1.0_macos_arm64.zip"
+      sha256 "cccf95a61f2bcbfb7b5c3f3d0e4ca6501ac2788f755529d41ed2c9d9c175fcad"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.12/ssmbrowse_0.1.0-alpha.12_macos_arm64.zip"
-    sha256 "5039958987342814afdaa25cf00891a96ae5bd113ba1a65b74b787c878290998"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.12/ssmbrowse_0.1.0-alpha.12_linux_x86_64.zip"
-    sha256 "76ffca081289355b6f14d789d4a858e4470290a407c3fc3c33a872ecd1cc9d5f"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0-alpha.12/ssmbrowse_0.1.0-alpha.12_linux_arm64.zip"
-    sha256 "45814fb7258c0e4bd25c56c16ff60ed606f02550a16200d96eeb89347cad99ec"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0/ssmbrowse_0.1.0_linux_x86_64.zip"
+      sha256 "44114d19e62b56b48b66fe57f7033fa06a51a2ac4835eff978788589861297d0"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0/ssmbrowse_0.1.0_linux_arm64.zip"
+      sha256 "738b266077d8a7711db4cd4ed83305ab0bae0193643ea73ed41568301453a153"
+    end
   end
 
   def install
