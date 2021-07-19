@@ -5,30 +5,17 @@
 class Ssmbrowse < Formula
   desc "Simple and elegant cli AWS SSM parameter browser."
   homepage "https://github.com/bnaydenov/ssmbrowse"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
   bottle :unneeded
 
-  on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0/ssmbrowse_0.1.0_macos_x86_64.zip"
-      sha256 "931bf5bd8c18f803820a310e07bced162d2a1ed5c2db48e069f8780476094579"
-    end
-    if Hardware::CPU.arm?
-      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0/ssmbrowse_0.1.0_macos_arm64.zip"
-      sha256 "cccf95a61f2bcbfb7b5c3f3d0e4ca6501ac2788f755529d41ed2c9d9c175fcad"
-    end
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.2.0/ssmbrowse_0.2.0_macos_x86_64.zip"
+    sha256 "11105cfc8cb0c1cbd064aa9cf4bdf589a75b5fc8eab251ca1a60f8943d3cdb74"
   end
-
-  on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0/ssmbrowse_0.1.0_linux_x86_64.zip"
-      sha256 "44114d19e62b56b48b66fe57f7033fa06a51a2ac4835eff978788589861297d0"
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.1.0/ssmbrowse_0.1.0_linux_arm64.zip"
-      sha256 "738b266077d8a7711db4cd4ed83305ab0bae0193643ea73ed41568301453a153"
-    end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.2.0/ssmbrowse_0.2.0_macos_arm64.zip"
+    sha256 "5723faaf81ec9a7370cbe854375de772dec360e698f33b7ce5facc432f3da1ab"
   end
 
   def install
