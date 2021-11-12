@@ -7,7 +7,6 @@ class Ssmbrowse < Formula
   homepage "https://github.com/bnaydenov/ssmbrowse"
   version "0.2.0"
   license "MIT"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.2.0/ssmbrowse_0.2.0_macos_x86_64.zip"
