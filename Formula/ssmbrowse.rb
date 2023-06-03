@@ -10,17 +10,17 @@ class Ssmbrowse < Formula
   depends_on :macos
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v2.0.1/ssmbrowse_darwin_arm64.zip"
-      sha256 "cf9642941bc01a1f6222ac6b08e59c0e59c00fbf5387c39e378cf160413079d6"
+    if Hardware::CPU.intel?
+      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v2.0.1/ssmbrowse_darwin_amd64.zip"
+      sha256 "e5f8c3189a98cdfc50cbc1e55d28e2458511852dbdf282e5c4c7df72d8fd6cf0"
 
       def install
         bin.install "ssmbrowse"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v2.0.1/ssmbrowse_darwin_amd64.zip"
-      sha256 "8c3926f02389442c7b56cb1886703e96b25b29dc32f86b1cb5e128221e08c71c"
+    if Hardware::CPU.arm?
+      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v2.0.1/ssmbrowse_darwin_arm64.zip"
+      sha256 "bc1bf59218c050ae7babf686e4b8342dbecdd9d1c177bf4152aa7823b72f0e0c"
 
       def install
         bin.install "ssmbrowse"
