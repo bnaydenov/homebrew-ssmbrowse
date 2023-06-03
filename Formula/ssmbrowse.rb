@@ -5,19 +5,26 @@
 class Ssmbrowse < Formula
   desc "Simple and elegant cli AWS SSM parameter browser."
   homepage "https://github.com/bnaydenov/ssmbrowse"
-  version "0.2.0"
+  version "2.0.1"
   license "MIT"
+  depends_on :macos
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.2.0/ssmbrowse_0.2.0_macos_x86_64.zip"
-    sha256 "11105cfc8cb0c1cbd064aa9cf4bdf589a75b5fc8eab251ca1a60f8943d3cdb74"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/bnaydenov/ssmbrowse/releases/download/v0.2.0/ssmbrowse_0.2.0_macos_arm64.zip"
-    sha256 "5723faaf81ec9a7370cbe854375de772dec360e698f33b7ce5facc432f3da1ab"
-  end
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v2.0.1/ssmbrowse_darwin_arm64.zip"
+      sha256 "cf9642941bc01a1f6222ac6b08e59c0e59c00fbf5387c39e378cf160413079d6"
 
-  def install
-    bin.install "ssmbrowse"
+      def install
+        bin.install "ssmbrowse"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/bnaydenov/ssmbrowse/releases/download/v2.0.1/ssmbrowse_darwin_amd64.zip"
+      sha256 "8c3926f02389442c7b56cb1886703e96b25b29dc32f86b1cb5e128221e08c71c"
+
+      def install
+        bin.install "ssmbrowse"
+      end
+    end
   end
 end
